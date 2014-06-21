@@ -1,0 +1,133 @@
+
+
+
+This code book file contain:
+1- Data source 
+2- Data variables Interpretation
+3- Data Variables Names
+4- Data transformation and clean up.
+
+
+
+
+
+
+--Data source:
+The data eas obtained from the link below:
+
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+
+--Variables Interpretation:
+ 
+ X, Y, Z: the axis of X, Y and Z (signals can be in the X, Y and Z directions) 
+ t (at the beginning of the variable names): time domain signals 
+ f (at the beginning of the variable names): frequency domain signals 
+ mean: Mean value 
+ std: Standard deviation 
+ meanFreq: Weighted average of the frequency components to obtain a mean 
+frequency 
+ angle: Angle between to vectors 
+ Acc: Acceleration signal from the smartphone accelerometer (sensor signal). 
+ Gyr: Angular velocity from the smartphone gyroscope (sensor signal). 
+ Body: The signals related to the body of subject (individual) who has been examined. 
+ Jerk: Jerk signals (the body linear acceleration and angular velocity were derived in 
+time to reach this signal) 
+ Mag: magnitude of the three-dimensional signals calculated using the Euclidean norm 
+ Gravity: The signals related to the gravity. 
+ Subject: The numbers between 1 to 30 which are identifiers of the subjects 
+(individuals) who carried out the experiment. 
+ Activity: including 6 activities performed by subjects (STANDING, SITTING, 
+LAYING, WALKING, WALKING_DOWNSTAIRS, WALKING_UPSTAIRS) 
+
+
+
+
+--The names of the variables 
+Variables with mean measurements: 
+tBodyAccmeanX 
+tBodyAccmeanY 
+tBodyAccmeanZ 
+tGravityAccmeanX 
+tGravityAccmeanY 
+tGravityAccmeanZ 
+tBodyAccJerkmeanX 
+tBodyAccJerkmeanY 
+tBodyAccJerkmeanZ 
+tBodyGyromeanX 
+tBodyGyromeanY 
+tBodyGyromeanZ 
+tBodyGyroJerkmeanX 
+tBodyGyroJerkmeanY ? tBodyGyroJerkmeanZ 
+tBodyAccMagmean 
+tGravityAccMagmean 
+tBodyAccJerkMagmean 
+tBodyGyroMagmean 
+tBodyGyroJerkMagmean 
+fBodyAccmeanX 
+fBodyAccmeanY 
+fBodyAccmeanZ 
+fBodyAccmeanFreqX 
+fBodyAccmeanFreqY 
+fBodyAccmeanFreqZ 
+fBodyAccJerkmeanX 
+fBodyAccJerkmeanY 
+fBodyAccJerkmeanZ 
+fBodyAccJerkmeanFreqX 
+fBodyAccJerkmeanFreqY 
+fBodyAccJerkmeanFreqZ 
+fBodyGyromeanX 
+fBodyGyromeanY 
+fBodyGyromeanZ 
+fBodyGyromeanFreqX 
+fBodyGyromeanFreqY 
+fBodyGyromeanFreqZ 
+fBodyAccMagmean 
+fBodyAccMagmeanFreq 
+fBodyBodyAccJerkMagmean 
+fBodyBodyAccJerkMagmeanFreq 
+fBodyBodyGyroMagmean 
+fBodyBodyGyroMagmeanFreq 
+fBodyBodyGyroJerkMagmean 
+fBodyBodyGyroJerkMagmeanFreq 
+angletBodyAccMeangravity 
+angletBodyAccJerkMeangravityMean 
+angletBodyGyroMeangravityMean 
+angletBodyGyroJerkMeangravityMean 
+angleXgravityMean 
+angleYgravityMean 
+angleZgravityMean 
+
+
+
+
+
+
+
+
+
+--Data transformation and clean up.
+
+The R code file is working on the data provided to:
+
+1. 1- Merge the training and the test sets to create one data set:
+Using mainly "merge" Function
+
+2-Extract only the measurements on the mean and standard deviation for each measurement. 
+ Using mainly "grep" and "gsub" functions
+
+ 3- Use descriptive activity names to name the activities in the data set.
+By assigning the activities in the file "activity_labels.txt" to the tables names.
+
+
+4-Appropriately labels the data set with descriptive variable names. 
+Then binding all columns together in one data set called "merged_data.txt”
+
+
+5- Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
+By finding the nuber of subjects and the number of the activity using the "unique" function ,the using a loop to find the mean of each activity for each subject using the "colMeans" function
+
+
+
+
+
